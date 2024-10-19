@@ -26,7 +26,7 @@ If we want to track the MS Polarlys (IMO 9107796) as it crosses the Arctic Circl
 * The MS Polarlys sails from Bergen on October 18th, October 29th, November 9th, November 20th 2024 etc..
 * The Arctic Circle lies between Nesna and Ørnes
 * The crossing will take place at approximately 9AM local time on Day 4 of the voyage
-* If request the VESSELS API data each minute from 6AM to 10AM CET on October 21st, November 1st etc. we will capture the crossing
+* If we request the VESSELS API data each minute from 6AM to 10AM CET on October 21st, November 1st etc. we will capture the crossing
 
 [Track_Vessel.py](./Track_Vessel.py) is a simple Python script which will track a vessel, or several vessels, for time windows defined in the code. The VESSELS JSON data is saved to individual files to preserve it. One file per request. Remember that requesting data for multiple vessels will use multiple credits.
 
