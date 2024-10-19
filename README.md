@@ -4,7 +4,7 @@ Python tools to help predict when a vessel will cross the Arctic Circle.
 
 ## Background
 
-On [Hurtigruten voyages](https://www.hurtigruten.com/en-gb/about-us/voyages/original) along the Norwegian coast, they celebrate crossing the [Arctic Circle](https://www.hurtigruten.com/en-gb/inspiration/coastal-highlights/arctic-circle) with a friendly competition. Whoever predicts the time the vessel will cross the Artctic Circle most accurately wins a prize - [ice water down the neck](https://youtu.be/TCo1N0wVk8g?feature=shared)!
+On [Hurtigruten voyages](https://www.hurtigruten.com/en-gb/about-us/voyages/original) along the Norwegian coast, they celebrate crossing the [Arctic Circle](https://www.hurtigruten.com/en-gb/inspiration/coastal-highlights/arctic-circle) with a friendly competition. Whoever predicts the time the vessel will cross the Arctic Circle most accurately wins a prize - [ice water down the neck](https://youtu.be/TCo1N0wVk8g?feature=shared)!
 
 I wondered if it would be possible to predict the crossing time more accurately using the vessel's location and route data from previous voyages...
 
