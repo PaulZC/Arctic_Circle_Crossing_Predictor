@@ -6,7 +6,7 @@ Python tools to help predict when a vessel will cross the Arctic Circle.
 
 On [Hurtigruten voyages](https://www.hurtigruten.com/en-gb/about-us/voyages/original) along the Norwegian coast, they celebrate crossing the [Arctic Circle](https://www.hurtigruten.com/en-gb/inspiration/coastal-highlights/arctic-circle) with a friendly competition. Whoever predicts the time the vessel will cross the Artctic Circle most accurately wins a prize - [ice water down the neck](https://youtu.be/TCo1N0wVk8g?feature=shared)!
 
-I wondered if it would be possible to predict the crossing time using the vessel's location and data from previous voyages...
+I wondered if it would be possible to predict the crossing time more accurately using the vessel's location and route data from previous voyages...
 
 ## Ship Locator
 
@@ -16,7 +16,7 @@ Hurtigruten share the location and route of all their ships:
 
 The vessel location data is provided by [VesselFinder.com](https://www.vesselfinder.com/). With a [free account](https://www.vesselfinder.com/get-premium), you can track the position of ten vessels in near real-time and see their route / track for the previous 24 hours. With a [Premium account](https://www.vesselfinder.com/get-premium) you can track more ships for longer - ad-free.
 
-The vessel data can be requested using the [API](https://api.vesselfinder.com/docs/). You need to purchase credits to use the API; these can be subscription-based (these are cheaper, you pay monthly, the credits last for one month) or on-demand (buy as many credits as you need, they last for 1 year). The [VESSELS](https://api.vesselfinder.com/docs/vessels.html) method provides the latest coordinates, speed, heading and other data for the vessel(s) you want to track. Each AIS enquiry will use one credit per vessel for terrestrial data, five credits for satellite data.
+The vessel data can also be requested using the [API](https://api.vesselfinder.com/docs/). You need to purchase credits to use the API; these can be subscription-based (these are cheaper, you pay monthly, the credits last for one month) or on-demand (buy as many credits as you need, they last for 1 year). The [VESSELS](https://api.vesselfinder.com/docs/vessels.html) method provides the latest coordinates, speed, heading and other data for the vessel(s) you want to track. Each AIS enquiry will use one credit per vessel for terrestrial data, five credits for satellite data.
 
 ## Stage 1: Collecting Data For Vessels Crossing The Arctic Circle
 
