@@ -91,7 +91,7 @@ if __name__ == '__main__':
     tracker.setUserKey('<ADD YOUR KEY HERE>')
 
     # Add a vessel: name, IMO
-    tracker.addVessel("MS Polarlys", 9107796)
+    tracker.addVessel('MS Polarlys', 9107796)
 
     # Add a time window: timezone, start, end
     # timezone is in pytz format. See pytz.all_timezones
