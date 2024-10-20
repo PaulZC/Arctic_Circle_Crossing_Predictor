@@ -18,7 +18,7 @@ The vessel location data is provided by [VesselFinder.com](https://www.vesselfin
 
 The vessel data can also be requested using the [API](https://api.vesselfinder.com/docs/). You need to purchase credits to use the API; these can be subscription-based (these are cheaper, you pay monthly, the credits last for one month) or on-demand (buy as many credits as you need, they last for 1 year). The [VESSELS](https://api.vesselfinder.com/docs/vessels.html) method provides the latest coordinates, speed, heading and other data for the vessel(s) you want to track. Each AIS enquiry will use one credit per vessel for terrestrial data, five credits for satellite data.
 
-## Stage 1: Collecting data for vessels crossing the Arctic Circle
+## Step 1: Collecting data for vessels crossing the Arctic Circle
 
 Hurtigruten ships sail from Bergen at 20:30 each day. The [sailing plan](https://www.hurtigruten.com/en-gb/sail-plan) provides the departure and arrival times for each port. The [route map](https://www.norwegiancoastalcruises.com/route-map.pdf) shows the approximate route of the vessels. The [schedule](https://www.norwegiancoastalcruises.com/schedules/bergen-departures-2024.htm) shows which vessel sails on which day.
 
@@ -30,6 +30,13 @@ If we want to track the MS Polarlys (IMO 9107796) as it crosses the Arctic Circl
 
 [Track_Vessel.py](./Track_Vessel.py) is a simple Python script which will track a vessel, or several vessels, for time windows defined in the code. The VESSELS JSON data is saved to individual files to preserve it. One file per request. Remember that requesting data for multiple vessels will use multiple credits.
 
+## Step 2 : Collate the data
+
+[Collate.py](./Collate.py) will collate all the individual ```Track_Vessel_*.json``` files into a list of dicts and save it to a Python pickle file
+
+## Step 3 : Convert the data to KML
+
+[Generate_KML.py](./Generate_KML.py) will search through the pickle file, extract data for the chosen vessel for the chosen time window, and convert it to KML format. Open the files in Google Earth to see the vessel's route and the points either side of the Arctic Circle.
 
 Enjoy!
 
