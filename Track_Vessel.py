@@ -71,8 +71,8 @@ class Tracker():
                 result = urllib.request.urlopen(request).read().decode("utf-8")
 
                 # Write result to file
-                dt = datetime.now() # Use local time for the file name
-                filename = dt.strftime("Track_Vessel_%Y-%m-%d_%H-%M-%S.json")
+                dt = datetime.now(pytz.UTC) # Use UTC for the file name
+                filename = dt.strftime("Track_Vessel_UTC_%Y-%m-%d_%H-%M-%S.json")
                 with open(filename, 'w') as f:
                     f.write(result)
                 print("Wrote:")
