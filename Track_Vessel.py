@@ -40,14 +40,15 @@ class Tracker():
 
             for window in self.windows:
                 now = datetime.now(pytz.timezone(window['tz'])) # now in the window timezone
-                print(now.isoformat())
+                print("Now :          " + now.isoformat())
                 start = pytz.timezone(window['tz']).localize(datetime.strptime(window['start'], "%Y-%m-%d %H:%M:%S"))
-                print(start.isoformat())
+                print("Window start : " + start.isoformat())
                 end = pytz.timezone(window['tz']).localize(datetime.strptime(window['end'], "%Y-%m-%d %H:%M:%S"))
-                print(end.isoformat())
+                print("Window end :   " + end.isoformat())
 
                 if now >= start and now <= end:
                     inWindow = True
+                    print("In window")
                 
                 if now <= end:
                     futureWindow = True
@@ -65,8 +66,7 @@ class Tracker():
                     request += str(self.vessels[vessel]) # Add each IMO
                     if vessel != list(self.vessels.keys())[-1]:
                         request += ","
-                print("Request:")
-                print(request)
+                print("Request : " + request)
 
                 result = urllib.request.urlopen(request).read().decode("utf-8")
 
@@ -75,10 +75,8 @@ class Tracker():
                 filename = dt.strftime("Track_Vessel_UTC_%Y-%m-%d_%H-%M-%S.json")
                 with open(filename, 'w') as f:
                     f.write(result)
-                print("Wrote:")
+                print("Wrote JSON to " + filename + " :")
                 print(result)
-                print("To:")
-                print(filename)
 
             # Repeat every 60 seconds until all windows have expired
             sleep(60)
