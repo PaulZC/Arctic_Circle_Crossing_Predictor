@@ -28,7 +28,7 @@ If we want to track the MS Polarlys (IMO 9107796) as it crosses the Arctic Circl
 * The crossing will take place at approximately 9AM local time on Day 4 of the voyage
 * If we request the VESSELS API data each minute from 6AM to 10AM CET on October 21st, November 1st etc. we will capture the crossing
 
-[Track_Vessel.py](./Track_Vessel.py) is a simple Python script which will track a vessel, or several vessels, for time windows defined in the code. The VESSELS JSON data is saved to individual files to preserve it. One file per request. Remember that requesting data for multiple vessels will use multiple credits.
+[Track_Vessel.py](./Track_Vessel.py) is a simple Python script which will track a vessel, or several vessels, for the time windows defined in the code. The VESSELS JSON data is saved to individual files to preserve it. One file per request. Remember that requesting data for multiple vessels will use multiple credits.
 
 ## Step 2 : Collate the data
 
@@ -37,6 +37,22 @@ If we want to track the MS Polarlys (IMO 9107796) as it crosses the Arctic Circl
 ## Step 3 : Convert the data to KML
 
 [Generate_KML.py](./Generate_KML.py) will search through the pickle file, extract data for the chosen vessel for the chosen time window, and convert it to KML format. Open the files in Google Earth to see the vessel's route and the points either side of the Arctic Circle.
+
+[![Arctic Circle crossing](./Crossing_small.png)](./Crossing.png)
+
+## Step 4 : Extract the crossings
+
+**Coming soon!**
+
+[Extract_Crossings.py](./Extract_Crossings.py) will search through the pickle file and calculate the times when vessels have crossed the Arctic Circle. It finds pairs of points either side of the Arctic Circle and calculates the time of the crossing using the great circle distance between the points. The latitude of the Arctic Circle can be changed; the default is the historical value of 66° 33' as shown on Google Earth; the [current true value](https://en.wikipedia.org/wiki/Arctic_Circle) is 66° 33' 50.2".
+
+## Step 5 : Live crossing prediction
+
+**Coming soon!**
+
+[Predict_Crossing.py](./Predict_Crossing.py) attempts to predict the time a vessel will cross the Arctic Circle. Using the expected route from previous crossings (from the pickle file) and the vessel position (from live VESSELS API requests), the code will attempt to predict the time of the crossing.
+
+Experimental. Only for fun. Your nautical mileage may vary...
 
 Enjoy!
 
