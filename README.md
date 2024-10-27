@@ -42,9 +42,9 @@ If we want to track the MS Polarlys (IMO 9107796) as it crosses the Arctic Circl
 
 ## Step 4 : Extract the crossings
 
-**Coming soon!**
-
 [Extract_Crossings.py](./Extract_Crossings.py) will search through the pickle file and calculate the times when vessels have crossed the Arctic Circle. It finds pairs of points either side of the Arctic Circle and calculates the time of the crossing using the great circle distance between the points. The latitude of the Arctic Circle can be changed; the default is the historical value of 66° 33' as shown on Google Earth; the [current true value](https://en.wikipedia.org/wiki/Arctic_Circle) is 66° 33' 50.2".
+
+[![Arctic Circle crossing times](./Crossing_Times.png)](./Crossing_Times.png)
 
 ## Step 5 : Live crossing prediction
 
