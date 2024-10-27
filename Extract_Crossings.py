@@ -96,6 +96,12 @@ class ExtractCrossings():
                         # Calculate the time of the crossing - by Latitude alone
                         timeOfCrossingByLat = southDT + ((northDT - southDT) * fraction)
 
+                        # Calculate the Longitude of the crossing - by Latitude alone
+                        crossingLon = southLon + ((northLon - southLon) * fraction)
+                        crossingDeg = math.floor(crossingLon)
+                        crossingMin = math.floor((crossingLon - crossingDeg) * 60.)
+                        crossingSec = (((crossingLon - crossingDeg) * 60.) - crossingMin) * 60.
+
                         # Calculate the Great Circle Distance between the two points
                         distance = self.greatCircleDistanceHaversine(southLat, southLon, northLat, northLon)
 
@@ -118,6 +124,7 @@ class ExtractCrossings():
                         print("Arctic Circle             : {:.5f}".format(self.ArcticCircleLatitude))
                         print("Latitude (South)          : {:.5f} at {}".format(southLat, southDT.isoformat()))
                         print("Latitude (North)          : {:.5f} at {}".format(northLat, northDT.isoformat()))
+                        print("Longitude of crossing     : {:.5f} ({:02.0f}° {:02.0f}\' {:02.1f}\")".format(crossingLon, crossingDeg, crossingMin, crossingSec))
                         print("Crossing time by Latitude : " + timeOfCrossingByLat.replace(tzinfo=pytz.timezone('UTC')).astimezone(pytz.timezone(self.timezone)).isoformat())
                         print("Crossing time by speed    : " + timeOfCrossingBySpeed.replace(tzinfo=pytz.timezone('UTC')).astimezone(pytz.timezone(self.timezone)).isoformat())
 
