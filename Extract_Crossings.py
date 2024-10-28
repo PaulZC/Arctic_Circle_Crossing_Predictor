@@ -16,7 +16,7 @@ from haversine import haversine, Unit
 class ExtractCrossings():
     def __init__(self):
         self.pickleFile = 'Track_Vessel.pkl'
-        self.ArcticCircleLatitude = 66. + (33. / 60.) # Historical value: 66 degrees 33 minutes
+        self.setArcticCircleDegMinSec(66., 33., 0.) # Historical value: 66 degrees 33 minutes
         self.timezone = 'UTC'
 
     def setPickleFilename(self, filename):
@@ -24,6 +24,15 @@ class ExtractCrossings():
 
     def setArcticCircleLatitude(self, lat):
         self.ArcticCircleLatitude = lat
+        self.ArcticCircleDeg = math.floor(self.ArcticCircleLatitude)
+        self.ArcticCircleMin = math.floor((self.ArcticCircleLatitude - self.ArcticCircleDeg) * 60.)
+        self.ArcticCircleSec = (((self.ArcticCircleLatitude - self.ArcticCircleDeg) * 60.) - self.ArcticCircleMin) * 60.
+
+    def setArcticCircleDegMinSec(self, deg, min, sec):
+        self.ArcticCircleDeg = deg
+        self.ArcticCircleMin = min
+        self.ArcticCircleSec = sec
+        self.ArcticCircleLatitude = self.ArcticCircleDeg + (self.ArcticCircleMin / 60.) + (self.ArcticCircleSec / 3600.)
 
     def setTimeZone(self, tz):
         self.timezone = tz
@@ -110,23 +119,31 @@ class ExtractCrossings():
                         deltaSpeedPerSecond = (northSpeed - southSpeed)  / timeDelta.total_seconds()
                         fractionalDistance = fraction * distance
 
-                        distanceTravelled = 0.0
+                        distanceTravelled = 0.
                         speedNow = southSpeed
                         timeOfCrossingBySpeed = southDT
                         
                         while distanceTravelled < fractionalDistance:
                             distanceTravelled += speedNow / 3600. # Knots -> Nautical Miles per second
-                            timeOfCrossingBySpeed += timedelta(0,1) # Add 1 second
+                            timeOfCrossingBySpeed += timedelta(seconds=1) # Add 1 second
                             speedNow += deltaSpeedPerSecond
 
                         print("-----------------------------------------------------------------")
                         print("Vessel                    : " + str(vessel))
-                        print("Arctic Circle             : {:.5f}".format(self.ArcticCircleLatitude))
-                        print("Latitude (South)          : {:.5f} at {}".format(southLat, southDT.isoformat()))
-                        print("Latitude (North)          : {:.5f} at {}".format(northLat, northDT.isoformat()))
-                        print("Longitude of crossing     : {:.5f} ({:02.0f}° {:02.0f}\' {:02.1f}\")".format(crossingLon, crossingDeg, crossingMin, crossingSec))
-                        print("Crossing time by Latitude : " + timeOfCrossingByLat.replace(tzinfo=pytz.timezone('UTC')).astimezone(pytz.timezone(self.timezone)).isoformat())
-                        print("Crossing time by speed    : " + timeOfCrossingBySpeed.replace(tzinfo=pytz.timezone('UTC')).astimezone(pytz.timezone(self.timezone)).isoformat())
+                        print("Arctic Circle             : {:.5f} ({:02.0f}° {:02.0f}\' {:02.1f}\")" \
+                              .format(self.ArcticCircleLatitude, self.ArcticCircleDeg, self.ArcticCircleMin, self.ArcticCircleSec))
+                        print("Latitude (South)          : {:.5f} at {} (UTC)" \
+                              .format(southLat, southDT.strftime('%Y-%m-%d %H:%M:%S')))
+                        print("Latitude (North)          : {:.5f} at {} (UTC)" \
+                              .format(northLat, northDT.strftime('%Y-%m-%d %H:%M:%S')))
+                        print("Longitude of crossing     : {:.5f} ({:02.0f}° {:02.0f}\' {:02.1f}\")" \
+                              .format(crossingLon, crossingDeg, crossingMin, crossingSec))
+                        print("Crossing time by Latitude : {} ({})" \
+                              .format(timeOfCrossingByLat.replace(tzinfo=pytz.timezone('UTC')) \
+                                      .astimezone(pytz.timezone(self.timezone)).strftime('%Y-%m-%d %H:%M:%S'), self.timezone))
+                        print("Crossing time by speed    : {} ({})" \
+                              .format(timeOfCrossingBySpeed.replace(tzinfo=pytz.timezone('UTC')) \
+                                      .astimezone(pytz.timezone(self.timezone)).strftime('%Y-%m-%d %H:%M:%S'), self.timezone))
 
                         latSouthOfCircle = -90. # Reset
 
@@ -141,6 +158,6 @@ if __name__ == '__main__':
     crossings.extractCrossings()
 
     # https://en.wikipedia.org/wiki/Arctic_Circle
-    crossings.setArcticCircleLatitude(66. + (33. / 60.) + (50.2 / 3600.))
+    crossings.setArcticCircleDegMinSec(66., 33., 50.2)
 
     crossings.extractCrossings()
