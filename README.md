@@ -24,8 +24,8 @@ Hurtigruten ships sail from Bergen at 20:30 each day. The [sailing plan](https:/
 
 If we want to track the MS Polarlys (IMO 9107796) as it crosses the Arctic Circle, we know that:
 * The MS Polarlys sails from Bergen on October 18th, October 29th, November 9th, November 20th 2024 etc..
-* The Arctic Circle lies between Nesna and Ørnes
-* The crossing will take place at approximately 9AM local time on Day 4 of the voyage
+* The Arctic Circle lies approximately halfway between Nesna (66.20°) and Ørnes (66.87°)
+* The crossing will take place at approximately 8AM local time on Day 4 of the voyage
 * If we request the VESSELS API data each minute from 6AM to 10AM CET on October 21st, November 1st etc. we will capture the crossing
 
 [Track_Vessel.py](./Track_Vessel.py) is a simple Python script which will track a vessel, or several vessels, for the time windows defined in the code. The VESSELS JSON data is saved to individual files to preserve it. One file per request. Remember that requesting data for multiple vessels will use multiple credits.
