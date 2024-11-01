@@ -68,15 +68,20 @@ class Tracker():
                         request += ","
                 print("Request : " + request)
 
-                result = urllib.request.urlopen(request).read().decode("utf-8")
+                result = None
+                try:
+                    result = urllib.request.urlopen(request).read().decode("utf-8")
+                except:
+                    print("URL request error!")
 
-                # Write result to file
-                dt = datetime.now(pytz.UTC) # Use UTC for the file name
-                filename = dt.strftime("Track_Vessel_UTC_%Y-%m-%d_%H-%M-%S.json")
-                with open(filename, 'w') as f:
-                    f.write(result)
-                print("Wrote JSON to " + filename + " :")
-                print(result)
+                if result is not None and 'AIS' in result:
+                    # Write result to file
+                    dt = datetime.now(pytz.UTC) # Use UTC for the file name
+                    filename = dt.strftime("Track_Vessel_UTC_%Y-%m-%d_%H-%M-%S.json")
+                    with open(filename, 'w') as f:
+                        f.write(result)
+                    print("Wrote JSON to " + filename + " :")
+                    print(result)
 
             # Repeat every 60 seconds until all windows have expired
             sleep(60)
