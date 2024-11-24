@@ -46,11 +46,13 @@ If we want to track the MS Polarlys (IMO 9107796) as it crosses the Arctic Circl
 
 [![Arctic Circle crossing times](./Crossing_Times.png)](./Crossing_Times.png)
 
-## Step 5 : Live crossing prediction
+## Step 5 : Extract data
 
-**Coming soon!**
+[Extract_Data.py](./Extract_Data.py) will search through the pickle file and extract data for the chosen vessel and time window. It calculates: the cumulative distance travelled in Nautical Miles; remaining distance to the destination; the distance to the Arctic Circle. The extracted data is saved to a second pickle file. The data in the second pickle file can be plotted with [Plot_Data.py](./Plot_Data.py).
 
-[Predict_Crossing.py](./Predict_Crossing.py) attempts to predict the time a vessel will cross the Arctic Circle. Using the expected route from previous crossings (from the pickle file) and the vessel position (from live VESSELS API requests), the code will attempt to predict the time of the crossing.
+## Step 6 : Live crossing prediction
+
+[Predict_Crossing.py](./Predict_Crossing.py) attempts to predict the time a vessel will cross the Arctic Circle. Using the expected route from a previous crossing (from the pickle file created by Extract_Data.py) and the vessel position (from live VESSELS API requests), the code will attempt to predict the time of the crossing based on the scheduled arrival time at Ørnes. If the ship is a little early or late leaving Nesna, the captain will (presumably) adjust the vessel's speed to arrive at Ørnes on schedule. The distance remaining is known. The average speed needed to arrive on schedule is known. The distance to the Arctic Circle is known. The crossing time can be predicted based on the distance and speed.
 
 Experimental. Only for fun. Your nautical mileage may vary...
 
