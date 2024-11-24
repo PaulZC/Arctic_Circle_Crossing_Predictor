@@ -22,11 +22,17 @@ class ExtractCrossings():
     def setPickleFilename(self, filename):
         self.pickleFile = filename
 
+    # Convert degrees to deg/min/sec
+    # This version only works correctly for positive dd
+    # Based on https://stackoverflow.com/a/2580236
+    def decdeg2dms(self, dd):
+        mnt,sec = divmod(dd*3600, 60)
+        deg,mnt = divmod(mnt, 60)
+        return deg, mnt, sec
+
     def setArcticCircleLatitude(self, lat):
         self.ArcticCircleLatitude = lat
-        self.ArcticCircleDeg = math.floor(self.ArcticCircleLatitude)
-        self.ArcticCircleMin = math.floor((self.ArcticCircleLatitude - self.ArcticCircleDeg) * 60.)
-        self.ArcticCircleSec = (((self.ArcticCircleLatitude - self.ArcticCircleDeg) * 60.) - self.ArcticCircleMin) * 60.
+        self.ArcticCircleDeg, self.ArcticCircleMin, self.ArcticCircleSec = self.decdeg2dms(self.ArcticCircleLatitude)
 
     def setArcticCircleDegMinSec(self, deg, min, sec):
         self.ArcticCircleDeg = deg
@@ -107,9 +113,7 @@ class ExtractCrossings():
 
                         # Calculate the Longitude of the crossing - by Latitude alone
                         crossingLon = southLon + ((northLon - southLon) * fraction)
-                        crossingDeg = math.floor(crossingLon)
-                        crossingMin = math.floor((crossingLon - crossingDeg) * 60.)
-                        crossingSec = (((crossingLon - crossingDeg) * 60.) - crossingMin) * 60.
+                        crossingDeg, crossingMin, crossingSec = self.decdeg2dms(crossingLon)
 
                         # Calculate the Great Circle Distance between the two points
                         distance = self.greatCircleDistanceHaversine(southLat, southLon, northLat, northLon)
@@ -155,9 +159,14 @@ if __name__ == '__main__':
 
     crossings.setTimeZone('Europe/Oslo')
 
+    # Polar Circle Globe on Vikingen Island
+    crossings.setArcticCircleLatitude(66.533540)
+    crossings.extractCrossings()
+
+    # Historical value: 66 degrees 33 minutes
+    crossings.setArcticCircleLatitude(66.55)
     crossings.extractCrossings()
 
     # https://en.wikipedia.org/wiki/Arctic_Circle
     crossings.setArcticCircleDegMinSec(66., 33., 50.2)
-
     crossings.extractCrossings()

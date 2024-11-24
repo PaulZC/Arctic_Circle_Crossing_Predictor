@@ -1,0 +1,84 @@
+
+Found vessels:
+9107796 : POLARLYS
+-----------------------------------------------------------------
+Vessel                    : 9107796
+Arctic Circle             : 66.53354 (66° 32' 0.7")
+Latitude (South)          : 66.53196 at 2024-10-21 05:49:08 (UTC)
+Latitude (North)          : 66.53555 at 2024-10-21 05:50:08 (UTC)
+Longitude of crossing     : 12.97797 (12° 58' 40.7")
+Crossing time by Latitude : 2024-10-21 07:49:34 (Europe/Oslo)
+Crossing time by speed    : 2024-10-21 07:49:35 (Europe/Oslo)
+-----------------------------------------------------------------
+Vessel                    : 9107796
+Arctic Circle             : 66.53354 (66° 32' 0.7")
+Latitude (South)          : 66.53177 at 2024-11-01 06:43:26 (UTC)
+Latitude (North)          : 66.53526 at 2024-11-01 06:44:26 (UTC)
+Longitude of crossing     : 12.97840 (12° 58' 42.2")
+Crossing time by Latitude : 2024-11-01 07:43:56 (Europe/Oslo)
+Crossing time by speed    : 2024-11-01 07:43:56 (Europe/Oslo)
+-----------------------------------------------------------------
+Vessel                    : 9107796
+Arctic Circle             : 66.53354 (66° 32' 0.7")
+Latitude (South)          : 66.53213 at 2024-11-23 06:52:38 (UTC)
+Latitude (North)          : 66.53674 at 2024-11-23 06:53:57 (UTC)
+Longitude of crossing     : 12.97818 (12° 58' 41.4")
+Crossing time by Latitude : 2024-11-23 07:53:02 (Europe/Oslo)
+Crossing time by speed    : 2024-11-23 07:53:03 (Europe/Oslo)
+-----------------------------------------------------------------
+
+Found vessels:
+9107796 : POLARLYS
+-----------------------------------------------------------------
+Vessel                    : 9107796
+Arctic Circle             : 66.55000 (66° 33' 0.0")
+Latitude (South)          : 66.54879 at 2024-10-21 05:56:12 (UTC)
+Latitude (North)          : 66.55268 at 2024-10-21 05:58:12 (UTC)
+Longitude of crossing     : 13.03216 (13° 01' 55.8")
+Crossing time by Latitude : 2024-10-21 07:56:49 (Europe/Oslo)
+Crossing time by speed    : 2024-10-21 07:56:49 (Europe/Oslo)
+-----------------------------------------------------------------
+Vessel                    : 9107796
+Arctic Circle             : 66.55000 (66° 33' 0.0")
+Latitude (South)          : 66.54899 at 2024-11-01 06:50:43 (UTC)
+Latitude (North)          : 66.55300 at 2024-11-01 06:52:46 (UTC)
+Longitude of crossing     : 13.03799 (13° 02' 16.8")
+Crossing time by Latitude : 2024-11-01 07:51:13 (Europe/Oslo)
+Crossing time by speed    : 2024-11-01 07:51:15 (Europe/Oslo)
+-----------------------------------------------------------------
+Vessel                    : 9107796
+Arctic Circle             : 66.55000 (66° 33' 0.0")
+Latitude (South)          : 66.54641 at 2024-11-23 06:58:46 (UTC)
+Latitude (North)          : 66.55018 at 2024-11-23 07:00:52 (UTC)
+Longitude of crossing     : 13.04216 (13° 02' 31.8")
+Crossing time by Latitude : 2024-11-23 08:00:45 (Europe/Oslo)
+Crossing time by speed    : 2024-11-23 08:00:45 (Europe/Oslo)
+-----------------------------------------------------------------
+
+Found vessels:
+9107796 : POLARLYS
+-----------------------------------------------------------------
+Vessel                    : 9107796
+Arctic Circle             : 66.56394 (66° 33' 50.2")
+Latitude (South)          : 66.56134 at 2024-10-21 06:02:12 (UTC)
+Latitude (North)          : 66.56869 at 2024-10-21 06:04:16 (UTC)
+Longitude of crossing     : 13.07735 (13° 04' 38.4")
+Crossing time by Latitude : 2024-10-21 08:02:55 (Europe/Oslo)
+Crossing time by speed    : 2024-10-21 08:02:57 (Europe/Oslo)
+-----------------------------------------------------------------
+Vessel                    : 9107796
+Arctic Circle             : 66.56394 (66° 33' 50.2")
+Latitude (South)          : 66.56338 at 2024-11-01 06:56:26 (UTC)
+Latitude (North)          : 66.57100 at 2024-11-01 06:58:23 (UTC)
+Longitude of crossing     : 13.07936 (13° 04' 45.7")
+Crossing time by Latitude : 2024-11-01 07:56:34 (Europe/Oslo)
+Crossing time by speed    : 2024-11-01 07:56:35 (Europe/Oslo)
+-----------------------------------------------------------------
+Vessel                    : 9107796
+Arctic Circle             : 66.56394 (66° 33' 50.2")
+Latitude (South)          : 66.56346 at 2024-11-23 07:06:14 (UTC)
+Latitude (North)          : 66.57117 at 2024-11-23 07:08:14 (UTC)
+Longitude of crossing     : 13.08515 (13° 05' 6.5")
+Crossing time by Latitude : 2024-11-23 08:06:21 (Europe/Oslo)
+Crossing time by speed    : 2024-11-23 08:06:22 (Europe/Oslo)
+-----------------------------------------------------------------

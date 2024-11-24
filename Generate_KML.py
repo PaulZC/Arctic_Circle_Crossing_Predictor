@@ -70,6 +70,9 @@ if __name__ == '__main__':
     # Set the time window: timezone, start, end
     # timezone is in pytz format. See pytz.all_timezones
     # start and end are in YYYY-MM-DD HH:MM:SS format
-    generate.setWindow('Europe/Oslo', '2024-10-21 07:00:00', '2024-10-21 10:00:00')
+    #generate.setWindow('Europe/Oslo', '2024-10-21 07:00:00', '2024-10-21 10:00:00')
+    #generate.setWindow('Europe/Oslo', '2024-11-01 06:00:00', '2024-11-01 10:10:00')
+    #generate.setWindow('Europe/Oslo', '2024-11-12 06:00:00', '2024-11-12 10:10:00')
+    generate.setWindow('Europe/Oslo', '2024-11-23 06:00:00', '2024-11-23 10:10:00')
 
     generate.generate()
