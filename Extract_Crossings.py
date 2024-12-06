@@ -159,14 +159,15 @@ if __name__ == '__main__':
 
     crossings.setTimeZone('Europe/Oslo')
 
-    # Polar Circle Globe on Vikingen Island
-    crossings.setArcticCircleLatitude(66.533540)
+    # Alongside the Polar Circle Globe on Vikingen Island
+    crossings.setArcticCircleDegMinSec(66., 31., 57.7)
     crossings.extractCrossings()
 
     # Historical value: 66 degrees 33 minutes
-    crossings.setArcticCircleLatitude(66.55)
-    crossings.extractCrossings()
+    #crossings.setArcticCircleDegMinSec(66., 33., 0.)
+    #crossings.extractCrossings()
 
+    # True value - 2024
     # https://en.wikipedia.org/wiki/Arctic_Circle
-    crossings.setArcticCircleDegMinSec(66., 33., 50.2)
-    crossings.extractCrossings()
+    #crossings.setArcticCircleDegMinSec(66., 33., 50.2)
+    #crossings.extractCrossings()

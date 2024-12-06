@@ -73,6 +73,7 @@ if __name__ == '__main__':
     #generate.setWindow('Europe/Oslo', '2024-10-21 07:00:00', '2024-10-21 10:00:00')
     #generate.setWindow('Europe/Oslo', '2024-11-01 06:00:00', '2024-11-01 10:10:00')
     #generate.setWindow('Europe/Oslo', '2024-11-12 06:00:00', '2024-11-12 10:10:00')
-    generate.setWindow('Europe/Oslo', '2024-11-23 06:00:00', '2024-11-23 10:10:00')
+    #generate.setWindow('Europe/Oslo', '2024-11-23 06:00:00', '2024-11-23 10:10:00')
+    generate.setWindow('Europe/Oslo', '2024-12-04 06:00:00', '2024-12-04 10:10:00')
 
     generate.generate()

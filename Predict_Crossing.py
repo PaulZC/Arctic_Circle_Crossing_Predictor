@@ -103,11 +103,11 @@ class PredictCrossing():
                     distanceToCircle = self.pickleJar[closestEntry]['CIRCLE_NM']
                     print("Distance to Arctic Circle (NM)  : {:.1f}".format(distanceToCircle))
 
-                    speedToDestination = distanceToDestination / timeToArrivalDelta.total_seconds()
+                    speedToDestination = distanceToDestination / (timeToArrivalDelta.total_seconds() / 3600.0)
                     print("Speed to arrive on time (Knots) : {:.1f}".format(speedToDestination))
 
                     timeToCircle = distanceToCircle / speedToDestination
-                    crossingTime = DTnow + timedelta(seconds = timeToCircle)
+                    crossingTime = DTnow + timedelta(hours = timeToCircle)
                     print("Crossing Time                   : {}".format(crossingTime.replace(tzinfo=pytz.timezone('UTC')) \
                                       .astimezone(pytz.timezone(self.arrivalTime['tz'])).strftime('%Y-%m-%d %H:%M:%S'), self.arrivalTime['tz']))
                     print()

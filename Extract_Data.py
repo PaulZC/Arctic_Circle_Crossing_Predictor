@@ -183,8 +183,14 @@ if __name__ == '__main__':
 
     extractData.setVessel(9107796) # MS Polarlys
 
-    # Polar Circle Globe on Vikingen Island
-    extractData.setArcticCircleLatitude(66.533540)
+    # Alongside the Polar Circle Globe on Vikingen Island
+    extractData.setArcticCircleDegMinSec(66., 31., 57.7)
+
+    # Historic value
+    #extractData.setArcticCircleDegMinSec(66., 33., 0.)
+
+    # True value - 2024
+    #extractData.setArcticCircleDegMinSec(66., 33., 50.2)
 
     # Set the time window: timezone, start, end
     # timezone is in pytz format. See pytz.all_timezones
