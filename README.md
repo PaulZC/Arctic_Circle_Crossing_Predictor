@@ -52,7 +52,11 @@ If we want to track the MS Polarlys (IMO 9107796) as it crosses the Arctic Circl
 
 ## Step 6 : Live crossing prediction
 
-[Predict_Crossing.py](./Predict_Crossing.py) attempts to predict the time a vessel will cross the Arctic Circle. Using the expected route from a previous crossing (from the pickle file created by Extract_Data.py) and the vessel position (from live VESSELS API requests), the code will attempt to predict the time of the crossing based on the scheduled arrival time at Ørnes. If the ship is a little early or late leaving Nesna, the captain will (presumably) adjust the vessel's speed to arrive at Ørnes on schedule. The distance remaining is known. The average speed needed to arrive on schedule is known. The distance to the Arctic Circle is known. The crossing time can be predicted based on the distance and speed.
+[Predict_Crossing.py](./Predict_Crossing.py) attempts to predict the time a vessel will cross the Arctic Circle. Using the expected route from a previous crossing (from the pickle file created by Extract_Data.py) and the vessel position (from live VESSELS API requests), the code will attempt to predict the time of the crossing based on the scheduled arrival time at Ørnes. If the ship is a little early or late leaving Nesna, the captain will adjust the vessel's speed to arrive at Ørnes on schedule. The distance remaining is known. The average speed needed to arrive on schedule is known. The distance to the Arctic Circle is known. The crossing time can be predicted based on the distance and average speed.
+
+[![Arctic Circle crossing prediction](./Prediction.png)](./Prediction.png)
+
+**Note:** based on the sailing of the MS Polarlys on 2024-12-04, the Arctic Circle crossing is defined as when the vessel passes alongside the Polar Circle Globe on Vikingen Island (66° 31' 57.7").
 
 Experimental. Only for fun. Your nautical mileage may vary...
 
