@@ -46,6 +46,8 @@ If we want to track the MS Polarlys (IMO 9107796) as it crosses the Arctic Circl
 
 [![Arctic Circle crossing times](./Crossing_Times.png)](./Crossing_Times.png)
 
+**Note:** based on the sailing of the MS Polarlys on 2024-12-04, the Arctic Circle crossing is defined as when the vessel passes alongside the Polar Circle Globe on Vikingen Island (66° 31' 57.7").
+
 ## Step 5 : Extract data
 
 [Extract_Data.py](./Extract_Data.py) will search through the pickle file and extract data for the chosen vessel and time window. It calculates: the cumulative distance travelled in Nautical Miles; remaining distance to the destination; the distance to the Arctic Circle. The extracted data is saved to a second pickle file. The data in the second pickle file can be plotted with [Plot_Data.py](./Plot_Data.py).
